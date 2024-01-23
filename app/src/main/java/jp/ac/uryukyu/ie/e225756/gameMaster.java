@@ -6,10 +6,14 @@ import java.io.InputStreamReader;
 
 public class gameMaster {
 
- final static int answer_size = 3;//当てる数。4にすれば4つの数字を当てるゲームになる。
+ final static int answer_size = 3;//当てる数。
  static int hit = 0;
  static int blow = 0;
  static int challenge = 1;
+
+ /**
+     * ゲームの説明を表示するメソッド。
+     */
 
     public static void gameMaster1() {
         String game = "ゲームを開始します。\n"
@@ -21,6 +25,10 @@ public class gameMaster {
         System.out.println(game);
         }
 
+        /**
+     * ユーザーからの回答を読み込むメソッド。
+     * ユーザーが入力した数字を配列に格納します。
+     */
     public static int[] readUserAnswer() {
             hit = 0;
             blow = 0;
@@ -44,6 +52,13 @@ public class gameMaster {
        return answer;
     }
 
+     /**
+     * ユーザーの回答と正解を比較するメソッド。
+     * ユーザーの回答が正解と一致するか、位置が一致するかを判定します。
+     * @param rigth_answer 正解の数字の配列
+     * @param user_answer ユーザーの回答の数字の配列
+     */
+    
     public static void cheack(int [] rigth_answer,int [] user_answer) {
         for (int i=0; i<rigth_answer.length;i++){
             for (int j=0; j < user_answer.length; j++){

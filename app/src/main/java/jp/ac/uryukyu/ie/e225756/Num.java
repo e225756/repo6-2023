@@ -2,8 +2,9 @@ package jp.ac.uryukyu.ie.e225756;
 
 public class Num {
 
-    public static int answer_size = 3;//当てる数。4にすれば4つの数字を当てるゲームになる。
-   
+    public static int answer_size = 3;//当てる数。
+
+ //* ランダムに正解を作成するメソッド*/
     public static int[] makeNum() {
         int[] answer = new int[answer_size];
         for(int i = 0; i < answer.length; i++) {
