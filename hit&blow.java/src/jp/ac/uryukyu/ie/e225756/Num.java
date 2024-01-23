@@ -1,27 +1,21 @@
 package jp.ac.uryukyu.ie.e225756;
 
 public class Num {
-    public static void mkdirnum(){
-        //配列を定義
-        int num[] = new int[10];
 
-        //配列を１から連番を格納
-        for (int i=0;i<num.length; ++i)
-            num[i] = i+1;
-        
-        //シャッフル
-        for (int i=0;i<num.length;++i){
-            //0~(配列numの個数-1)の乱数を発生
-            int rnd = (int)(Math.random()*(double)num.length);
-             //num[i]とnum[rnd]を入れ替える
-            int w = num[i];
-            num[i] = num[rnd];
-            num[rnd] = w;
+    public static int answer_size = 3;//当てる数。4にすれば4つの数字を当てるゲームになる。
+   
+    public static int[] makeNum() {
+        int[] answer = new int[answer_size];
+        for(int i = 0; i < answer.length; i++) {
+        answer[i] = (int)(Math.random()*10);
+        for(int j = i-1; j >=0; j--) {
+        if(answer[j] == answer[i]) {
+        answer[i] = (int)(Math.random()*10);
         }
-
-        //結果を表示
-        for (int i = 0;i<num.length;++i)
-        System.out.println(num[i]);
+     }
     }
+        return answer;
+  }
+        
 }
 
